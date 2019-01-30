@@ -2,11 +2,13 @@
 parent_dir=$(pwd)
 tslib_dir=$parent_dir/mytslib
 prefix_dir=$parent_dir/qt-arm-lib
+rootfs_dir="/opt/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc"
 cp -rf qtbase $1/
 cd $1
 #make clean
 ./configure --prefix=$prefix_dir  \
 -v \
+-sysroot $rootfs_dir \
 -opensource \
 -release \
 -confirm-license \
@@ -44,8 +46,8 @@ cd $1
 -no-qt3d-logic \
 -no-qt3d-extras \
 -no-qt3d-animation \
--no-openssl -no-openvg -no-angle -no-icu -skip svg -skip xmlpatterns  -skip declarative -skip multimedia  -skip imageformats -skip quickcontrols -skip quickcontrols2 -skip translations -skip doc -skip graphicaleffects -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtserialbus -skip qtlocation  -skip qtscript -skip qtgamepad -skip qtandroidextras -skip qtscxml \
+-no-openssl -no-openvg -no-angle -no-icu -skip svg -skip xmlpatterns  -skip declarative -skip multimedia  -skip imageformats -skip quickcontrols -skip quickcontrols2 -skip translations -skip doc -skip graphicaleffects -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtserialbus -skip qtlocation  -skip qtscript -skip qtgamepad -skip qtandroidextras -skip qtscxml -skip qtpurchasing \
 -recheck-all    
 
 
-#make && make install
+make && make install

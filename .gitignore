@@ -1,3 +1,5 @@
+rootfs/
+qt-arm-lib/
 qt-everywhere-*/
 qt-everywhere-*
 tslib*/
