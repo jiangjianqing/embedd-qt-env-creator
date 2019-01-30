@@ -11,3 +11,15 @@ fbutils.c:(.text+0xa20): undefined reference to `rpl_malloc'
 1、将qt解压到当前目录，假定为: qt-everywhere-src-5.12.0
 2、执行shell脚本
     ./qt-build.sh qt-everywhere-src-5.12.0
+
+
+./configure 
+-release 
+-opengl es2 
+-device linux-rasp-pi2-g++ 
+-device-option CROSS_COMPILE=$TOOLCHAIN/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- 
+-sysroot $ROOTFS 
+-prefix /usr/local/qt
+
+这段描述说明要先制作rootfs!!!!
+The most important parameters are -device and -sysroot. By specifying -sysroot, the include files and libraries used by configure's feature detection tests, as well as Qt itself, is taken from the specified location, instead of the host PC's standard locations. This means that installing development packages on the host machine has no relevance. For example, to get libinput support it is not sufficient or necessary to have the libinput development headers and libraries installed on the host environment. Instead, the headers and the libraries for the target architecture (e.g. ARM) must be present in the sysroot.
