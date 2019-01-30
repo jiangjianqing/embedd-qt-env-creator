@@ -1,6 +1,7 @@
 qt-everywhere-*/
+qt-everywhere-*
 tslib*/
-
+mytslib/
 # C++ objects and libs
 *.slo
 *.lo
