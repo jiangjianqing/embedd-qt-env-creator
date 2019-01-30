@@ -12,6 +12,9 @@ fbutils.c:(.text+0xa20): undefined reference to `rpl_malloc'
 2、执行shell脚本
     ./qt-build.sh qt-everywhere-src-5.12.0
 
+#编译qt遇到的问题
+ERROR: Feature 'tslib' was enabled, but the pre-condition 'libs.tslib' failed.
+解决办法：tslib和sqlite3要预先编译并指定路径或者配置末尾加上 -recheck-all 选项。
 
 ./configure 
 -release 

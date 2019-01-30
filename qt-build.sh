@@ -26,13 +26,26 @@ cd $1
 -no-sse2 -no-sse3 -no-ssse3 -no-sse4.1 -no-sse4.2 \
 -no-avx \
 -no-openssl \
+-no-assimp \
 -no-separate-debug-info \
--no-webengine
 -tslib \
 -I$tslib_dir/include -L$tslib_dir/lib \
 -qt-freetype \
 -nomake tools \
 -nomake tests \
--nomake examples 
+-nomake examples  \
+-no-opengl \
+-no-dbus \
+-no-qt3d-profile-jobs \
+-no-qt3d-profile-gl \
+-no-qt3d-simd \
+-no-qt3d-render \
+-no-qt3d-input \
+-no-qt3d-logic \
+-no-qt3d-extras \
+-no-qt3d-animation \
+-no-openssl -no-openvg -no-angle -no-icu -skip svg -skip xmlpatterns  -skip declarative -skip multimedia  -skip imageformats -skip quickcontrols -skip quickcontrols2 -skip translations -skip doc -skip graphicaleffects -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtserialbus -skip qtlocation  -skip qtscript -skip qtgamepad -skip qtandroidextras -skip qtscxml \
+-recheck-all    
 
-make && make install
+
+#make && make install
